@@ -1,0 +1,37 @@
+{
+  "name": "project-besvoxelnoderpg",
+  "version": "1.0.0",
+  "description": "web browser game",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Lightnet",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-amd": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "express": "^4.16.2",
+    "gulp": "^3.9.1",
+    "gulp-add-src": "^0.2.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-clean-ts-extends": "^0.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-express": "^0.3.5",
+    "gulp-minify": "^2.1.0",
+    "gulp-optimize-js": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-requirejs": "^1.1.1",
+    "gulp-uglify": "^3.0.0",
+    "gun": "^0.9.7",
+    "gun-level": "^6.0.4",
+    "leveldown": "^2.1.1",
+    "levelup": "^2.0.1",
+    "mongodown": "^1.2.0",
+    "socket.io": "^2.0.4"
+  }
+}
