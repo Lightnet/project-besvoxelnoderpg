@@ -1,7 +1,6 @@
 var gun = Gun("http://127.0.0.1/gun");
 var user = gun.user();
 
-
 function clicklogin(){
   //console.log(document.getElementById("user").value);
   //console.log(document.getElementById("password").value);
@@ -32,14 +31,35 @@ function clickcreate(){
 }
 
 function chatmessage(){
-  console.log(user);
+  if(user.alias !=null){
+    console.log(user);
+
+    user.get('pub').val(function(data, key){
+      console.log("key:"+ key);
+      console.log("data:"+ data);
+    });
+  }else{
+    console.log("no user!" + user);
+    //console.log(user.get('alias').val());
+  }
+}
+
+function setpubmessage(){
 
   user.get('pub').val(function(data, key){
-    console.log("key:"+ key);
-    console.log("data:"+ data);
+    //console.log("key:"+ key);
+    //console.log("data:"+ data);
+    //console.log(data);
+    gun.get("pub/" + data).put({hello:"world"});
   });
+}
 
-
+function getpubmessage(){
+  user.get('pub').val(function(data, key){
+    gun.get("pub/" + data).get('hello').val(function(val, key){
+      console.log("READ:", val, key);
+    });
+  });
 }
 
 
