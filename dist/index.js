@@ -160,9 +160,20 @@ if (config.blocaldatabase) {
 var gun = new Gun({
     level: levelDB,
     file: false, //disable data.json save file
-    web: serverapp
-    //init: true,
+    web: serverapp,
+    init: true
 });
+
+/*
+gun.get('voxel').put({
+    name: "voxel",
+    email: "voxel@gunDB.io",
+  });
+
+  gun.get('voxel').on(function(data, key){
+    console.log("update:", data);
+  });
+  */
 
 app.use(Gun.serve);
 

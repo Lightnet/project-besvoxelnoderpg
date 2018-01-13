@@ -120,6 +120,11 @@ gulp.task('js', () =>{
     .pipe(gulp.dest('public/js'));
 });
 
+gulp.task('css', () =>{
+    return gulp.src(['src/css/*.css'])
+    .pipe(gulp.dest('public/css'));
+});
+
 
 
 gulp.task('app', () =>{
@@ -140,9 +145,10 @@ gulp.task('watch', () =>{
     gulp.watch('src/threejs_game/**/*.js', ['es6-amd-threejs-game']);
     gulp.watch('src/html/*.html', ['html']);
     gulp.watch('src/js/*.js', ['js']);
+    gulp.watch('src/css/*.css', ['css']);
 });
 
-gulp.task('build',['app','html','js','lib','src','src_browser','es6-amd-threejs','es6-amd-threejs-game'] ,() =>{
+gulp.task('build',['app','html','js','css','lib','src','src_browser','es6-amd-threejs','es6-amd-threejs-game'] ,() =>{
 
 });
 

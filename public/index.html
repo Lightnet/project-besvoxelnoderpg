@@ -1,16 +1,50 @@
 <!DOCTYPE HTML>
 <html lang = "en">
-<head>
-  <!-- basic.html -->
-  <title>Voxel Node</title>
-  <meta charset = "UTF-8" />
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="/gun.js"></script>
+  <head>
+    <!-- basic.html -->
+    <title>Voxel Node</title>
+    <meta charset = "UTF-8" />
 
-  <script src="/js/socketioclient.js"></script>
-  <script src="/js/gundbclient.js"></script>
-</head>
-<body>
-    Test!
-</body>
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/gun.js"></script>
+
+    <script src="/js/cryptomodules.js"></script>
+
+    <script src="/js/sea.js"></script>
+
+    <script src="/js/socketioclient.js"></script>
+    <script src="/js/gundbclient.js"></script>
+
+    <script src="/js/three.min.js"></script>
+    <script src="/js/threejsapp.js"></script>
+  </head>
+  <body>
+      <div id="appcontent"></div>
+
+      <div id="editorcontent"></div>
+
+      <div id="navtopcontent">
+        <div id="navbarheader">
+          <a href="#">Account</a>
+          <a href="#">Game</a>
+          <a href="#">Editor</a>
+          <a href="#">Options</a>
+        </div>
+      </div>
+
+      <div id="navbottomcontent">
+        <div id="navbarfooter">
+          <a href="#">Chat</a>
+          <a href="#">Party</a>
+          <a href="#">Clan</a>
+          <a href="#">Logs</a>
+          <a href="#">Report</a>
+        </div>
+      </div>
+      
+      
+      
+  </body>
 </html>

@@ -1,0 +1,39 @@
+body{
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+}
+
+#navtopcontent {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#navbottomcontent{
+    position: absolute;
+    left: 0px;
+    bottom: 10px;
+}
+
+#appcontent {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width:100%;
+    height:100%;
+    margin:0px 0px 0px 0px;
+}
+
+#editorcontent {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#loginpanel {
+
+    
+}
