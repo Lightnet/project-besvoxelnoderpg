@@ -88,10 +88,8 @@ gulp.task('es6-amd-threejs-game', () =>{
 gulp.task('html',['src'], () =>{
     //return gulp.src(['src/html/*.html'])
     return gulp.src(['src/html/index.html',
-        'src/html/requirejs_main.html',
+        'src/html/gundbclient.html',
         'src/html/threejs_requirejs_app.html',
-        'src/html/threejs_requirejs_main.html',
-        'src/html/gundb.html',
         'src/html/network.html'
     ])
     .pipe(gulp.dest('public'));
