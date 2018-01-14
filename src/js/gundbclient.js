@@ -4,12 +4,11 @@ var user = gun.user();
 function clicklogin(){
   //console.log(document.getElementById("user").value);
   //console.log(document.getElementById("password").value);
-  var iuser = document.getElementById("password").value;
-  var ipassword = document.getElementById("user").value;
-
+  var iuser = document.getElementById("user").value;
+  var ipassword = document.getElementById("password").value;
   user.auth(iuser,ipassword, function(ack){
-    console.log("login?");
-    console.log(ack);
+    //console.log("login?");
+    //console.log(ack);
     if(ack.err != null){
       console.log("login fail");
     }else{
@@ -18,12 +17,21 @@ function clicklogin(){
   });
 }
 
+function clicklogout(){
+  console.log(user);
+  user.leave(function(data){
+    console.log(data);
+  });
+  console.log(user);
+  
+}
+
 function clickcreate(){
   //console.log(document.getElementById("user").value);
   //console.log(document.getElementById("password").value);
-  var iuser = document.getElementById("password").value;
-  var ipassword = document.getElementById("user").value;
-
+  var iuser = document.getElementById("user").value;
+  var ipassword = document.getElementById("password").value;
+  console.log(iuser,ipassword);
   user.create(iuser,ipassword, function(ack){
     console.log("creating?");
     console.log(ack);
@@ -60,6 +68,81 @@ function getpubmessage(){
       console.log("READ:", val, key);
     });
   });
+}
+
+function userlist(){
+  console.log("userlist");
+  //gun.get('*').map().val(function(data, id){
+    //ui.list.user(user);
+    //console.log("val!",data,id);
+  //});
+
+  user.get('alias').on(function(data, key){
+    console.log("user:", data);
+  });
+
+  console.log(user);
+  console.log(gun);
+
+  //gun.get('root').map().val(function(val,key){
+    //console.log(val,key);
+  //});
+
+  console.log(gun.toJSON()  );
+
+  //gun.map().val(function(val,key){
+    //console.log(val,key);
+  //});
+
+
+  //localStorage.clear()
+
+  /*
+  user.get('pub').val(function(data, key){
+    gun.get("pub/" + data).get('hello').val(function(val, key){
+      console.log("READ:", val, key);
+    });
+  });
+  */
+
+  //gun.map().on(function(data, key) {
+    //console.log('data',data,key);
+  //})
+  //console.log("end users");
+  //console.log(user);
+
+  //console.log(gun);
+
+  //gun.get('user').map().val(function(user, id){
+    //ui.list.user(user);
+    //console.log("USER!");
+  //});
+  /*
+  gun.get('alias').map().val(function(data, id){
+    //ui.list.user(user);
+    console.log("val!",data,id);
+  });
+  */
+  //gun.get('alias').val(function(data, id){
+    //ui.list.user(user);
+    //console.log("val!",data,id);
+  //});
+
+  //console.log(gun);
+
+  //gun.get('_').map().val(function(data, id){
+    //ui.list.user(user);
+    //console.log("val!",data,id);
+  //});
+
+  
+
+  //gun.get('alias').map().val(function(user, id){
+    //ui.list.user(user);
+    //console.log("alias!");
+  //});
+
+
 }
 
 

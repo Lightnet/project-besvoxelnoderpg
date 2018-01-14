@@ -153,7 +153,7 @@ var gun = new Gun({
     level: levelDB,
     file:false, //disable data.json save file
     web: serverapp,
-    init: true,
+    init: true
 });
 
 /*

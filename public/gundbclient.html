@@ -15,14 +15,18 @@
 <body>
     GunDB
     <form action="javascript:void(0);">
-      <label>User</label> <input id="user" value="alice">
+      <label>User</label> <input id="user" value="test">
       <label>Password</label> <input id="password" value="unsafepassword">
       <button onclick="clicklogin()">Login</button>
+      <button onclick="clicklogout()">Logout</button>
+      
       <button onclick="clickcreate()">Create</button>
     </form>
 
     <button onclick="setpubmessage()">set pub message</button>
     <button onclick="getpubmessage()">get pub message</button>
+
+    <button onclick="userlist()">user list</button>
 
 
     <br>
