@@ -150,10 +150,10 @@ if(config.blocaldatabase){//'mongodb://<dbuser>:<dbpassword>@ds139438.mlab.com:3
 // create a new gun instance
 //https://github.com/amark/gun/issues/139
 var gun = new Gun({
-    level: levelDB,
     file:false, //disable data.json save file
-    web: serverapp,
-    init: true
+    init: true,
+    level: levelDB,
+    web: serverapp//,
 });
 
 /*

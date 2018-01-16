@@ -1,4 +1,5 @@
 var gun = Gun("http://127.0.0.1/gun");
+//var gun = Gun();
 var user = gun.user();
 
 function clicklogin(){
@@ -18,12 +19,11 @@ function clicklogin(){
 }
 
 function clicklogout(){
-  console.log(user);
+  //console.log(user);
   user.leave(function(data){
     console.log(data);
   });
-  console.log(user);
-  
+  //console.log(user);
 }
 
 function clickcreate(){
@@ -35,6 +35,11 @@ function clickcreate(){
   user.create(iuser,ipassword, function(ack){
     console.log("creating?");
     console.log(ack);
+    if(ack.pub){
+      //gun.get('users').put('alias/'+iuser);
+      gun.get('users').get(iuser).put(gun.get('alias/'+iuser));
+      console.log("user created!");
+    }
   });
 }
 
@@ -53,7 +58,6 @@ function chatmessage(){
 }
 
 function setpubmessage(){
-
   user.get('pub').val(function(data, key){
     //console.log("key:"+ key);
     //console.log("data:"+ data);
@@ -70,33 +74,88 @@ function getpubmessage(){
   });
 }
 
+function aliaslist(){
+
+  console.log("alias:");
+
+  var alias = gun.get('alias');
+
+  alias.val(function(data, key){
+    console.log("data: ",data," key:",key);
+  });
+
+  //console.log(gun.get('alias'));
+
+
+
+}
+
+
 function userlist(){
   console.log("userlist");
+
+  var users = gun.get('users');
+
+  //users.get('test').put('alias');
+  //users.get('test1').put('alias');
+
+  //users.set({name:"test",id:"0"});
+  //users.set({name:"test",id:"1"});
+  //users.put({name:"test1"});
+  users.map().val(function(data, key){
+    console.log("data: ",data," key:",key);
+  });
+
+
+
+  //gun.get('users').val(function(user, id){
+    //console.log("USER!",user,id);
+  //});
+
+  //gun.get('userslist').path('alias').set('test1');
+  //gun.get('userslist').path('alias').set('test2');
+
+  //gun.get('userslist').get('alias').val(function(user, id){
+    //console.log("alias!",user,id);
+  //});
+
+
+  //gun.get('userslist').get('alias').map().val(function(user, id){
+    //console.log("alias!",user,id);
+  //});
+
+  //gun.get('users').map().val(function(user, id){
+    //console.log("alias!",user,id);
+  //});
+
+  //console.log(gun.get('users').val());
+
+  //console.log(gun.get('users'));
+  //console.log(gun.get('alias'));
+
+
   //gun.get('*').map().val(function(data, id){
     //ui.list.user(user);
     //console.log("val!",data,id);
   //});
 
-  user.get('alias').on(function(data, key){
-    console.log("user:", data);
-  });
+  //user.get('users').on(function(data, key){
+    //console.log("user:", data);
+  //});
 
-  console.log(user);
-  console.log(gun);
+  //console.log(user);
+  //console.log(gun);
 
   //gun.get('root').map().val(function(val,key){
     //console.log(val,key);
   //});
 
-  console.log(gun.toJSON()  );
-
+  //console.log(gun.toJSON());
   //gun.map().val(function(val,key){
     //console.log(val,key);
   //});
 
-
   //localStorage.clear()
-
   /*
   user.get('pub').val(function(data, key){
     gun.get("pub/" + data).get('hello').val(function(val, key){
@@ -135,14 +194,10 @@ function userlist(){
     //console.log("val!",data,id);
   //});
 
-  
-
   //gun.get('alias').map().val(function(user, id){
     //ui.list.user(user);
     //console.log("alias!");
   //});
-
-
 }
 
 
